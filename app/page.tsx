@@ -1,19 +1,49 @@
-import { Button } from "@/components/ui/button"
+import {Container} from '../components/container'
+import {Button} from '../components/ui/button'
+import {CardSmall}  from '../components/ui/cardComponent'
 
 export default function Page() {
   return (
-    <div className="flex min-h-svh p-6">
-      <div className="flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose">
-        <div>
-          <h1 className="font-medium">Project ready!</h1>
-          <p>You may now add components and start building.</p>
-          <p>We&apos;ve already added the button component for you.</p>
-          <Button className="mt-2">Button</Button>
-        </div>
         <div className="font-mono text-xs text-muted-foreground">
-          (Press <kbd>d</kbd> to toggle dark mode)
+          <Container>
+
+            {/* Hero */}
+            <div className="flex flex-col items-center gap-4 text-center pt-5">
+              <h1 className="scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance ">
+                Locus — твой центр управления делами
+              </h1>
+              <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">
+                Автоматизация задач, и умный трекинг дедлайнов
+              </h4>
+              <Button className='w-60 h-15 text-xl rounded-2xl px-4 py-2 mt-4 hover:bg-primary/90 transition-colors duration-300'>
+                Начать
+              </Button>
+            </div>
+
+
+            <div className='flex gap-100'>
+              {/* Статистика */}
+              <div className="flex flex-col gap-y-5 pt-4">
+                <div> 
+                  <CardSmall/>
+                </div>
+                <div> 
+                  <CardSmall />
+                </div>
+                <div > 
+                  <CardSmall />
+                </div>
+              </div>
+
+
+              {/* Преобразование видео в конспект */}
+              <div className=" gap-6 pt-4">
+                <div className="flex">  
+                  
+                </div>
+              </div>
+            </div>
+          </Container>
         </div>
-      </div>
-    </div>
   )
 }

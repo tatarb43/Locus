@@ -1,8 +1,17 @@
+import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google"
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils";
+import { Header } from "@/components/header";
+import { ThemeToggle } from "@/components/themeToggle";
+
+export const metadata: Metadata = {
+  title: "Locus",
+  description: "Клининг вашего мозга",
+  
+}; 
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'})
 
@@ -11,19 +20,16 @@ const fontMono = Geist_Mono({
   variable: "--font-mono",
 })
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+export default function RootLayout({children,}: Readonly<{ children: React.ReactNode}>) {
+  
   return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", geist.variable)}
-    >
+    <html lang="en" suppressHydrationWarning className={cn("antialiased", fontMono.variable, "font-sans", geist.variable)}>
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <Header />
+          <main className="min-h-screen">{children}</main>
+          <ThemeToggle />
+        </ThemeProvider>
       </body>
     </html>
   )
