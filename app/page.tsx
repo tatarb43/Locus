@@ -1,6 +1,7 @@
 import {Container} from '../components/container'
 import {Button} from '../components/ui/button'
 import {CardSmall}  from '../components/ui/cardComponent'
+import { Input } from "@/components/ui/input"
 
 export default function Page() {
   return (
@@ -39,7 +40,10 @@ export default function Page() {
               {/* Преобразование видео в конспект */}
               <div className=" gap-6 pt-4">
                 <div className="flex">  
-                  
+                  <Input className='w-80 h-15 text-xl rounded-2xl px-4 py-2 mt-4 hover:bg-primary/90 transition-colors duration-300' placeholder="Вставьте ссылку на видео" />
+                  <Button className='w-20 h-15 text-sm rounded-2xl px-4 py-2 mt-4 hover:bg-primary/90 transition-colors duration-300 ml-2'>
+                    Конспект
+                  </Button>
                 </div>
               </div>
             </div>
